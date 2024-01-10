@@ -1,5 +1,6 @@
 const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
+const box = document.querySelector(".card");
 const scissors = document.getElementById("scissors");
 const submit = document.querySelector("#submit");
 const cards = document.querySelectorAll(".card");
@@ -44,7 +45,6 @@ function onSubmit() {
   let computer_input;
   computer_input = computerSelectedOption();
 
-  console.log(user_input === undefined || name === undefined ? "jip" : "nope");
   if (user_input === undefined || name === undefined) {
     document.getElementById("not_selected").innerHTML =
       "Please enter your name or select one of the options above.";
@@ -78,18 +78,13 @@ function onSubmit() {
   }
 
   resultSection.appendChild(paragraph);
+
   paragraph.innerText = result.toLocaleUpperCase();
-  paragraph.style.color =
-    result.toLocaleLowerCase() === "you win!"
-      ? "green"
-      : result.toLocaleLowerCase() === "you lose!"
-      ? "red"
-      : "orange";
   paragraph.appendChild(computerInput);
+
   computerInput.innerText = `Computer selected: ${listOptions[
     computer_input
   ].toLocaleUpperCase()}`;
-  computerInput.style.color = "black";
 
   computerInput.appendChild(p);
   p.innerText =
@@ -98,5 +93,10 @@ function onSubmit() {
       : result.toLocaleLowerCase() === "you lose!"
       ? `Winner: Computer Player`
       : "";
-      p.style.color = "black";
+
+      resultSection.style.boxShadow = result.toLocaleLowerCase() === "you win!"
+    ? "0px 0px 25px rgba(0, 217, 14, 0.8)"
+    : result.toLocaleLowerCase() === "you lose!"
+    ? "0px 0px 25px rgba(255, 0, 0, 0.8)"
+    : "0px 0px 25px rgba(255, 165, 0, 0.8)"; 
 }
