@@ -10,6 +10,8 @@
     <div class="container">
         <h1>Are you the Rock Paper Scissors King/Queen?</h1>
         <h2>Lets find out!</h2>
+        <label for="name">Please insert your name: </label>
+        <input type="text" id="name" name="name"  />
         <p>Select one below to see if you can beat computer!</p>
       <div class="box">
         <div id="rock" class="card">
@@ -25,7 +27,11 @@
           <p>Scissors</p>
         </div>
       </div>
-      <button id="submit">Start</button>
+      <div class="btn-container">
+
+          <button id="submit">Start</button>
+        </div>
+      <small id="not_selected"></small>
       <div id="result-section"></div>
     </div>
     <script
