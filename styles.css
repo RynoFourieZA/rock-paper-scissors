@@ -16,6 +16,13 @@ body {
   );
 }
 
+input[type=text] {
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    font-size: 16px;
+}
+
 .box {
   display: flex;
   justify-content: space-around;
@@ -44,6 +51,10 @@ body {
   color: white;
 }
 
+.btn-container {
+    display: flex;
+}
+
 #submit {
   margin: 16px;
   padding: 8px 16px;
@@ -57,6 +68,10 @@ body {
   background: #2196f3;
   border: 2px solid transparent;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+
+#not_selected {
+    margin-left: 16px;
 }
 
 #result-section {
